@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin - Libro de Reclamaciones</title>
+  <style>
+    body{font-family:system-ui,Arial;margin:24px;background:#f6f7fb}
+    table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
+    th,td{padding:10px;border-bottom:1px solid #eee;vertical-align:top}
+    th{background:#111;color:#fff;text-align:left}
+    .wrap{white-space:pre-wrap}
+  </style>
+</head>
+<body>
+  <h1>Admin - Registros</h1>
+
+  <table id="t">
+    <thead>
+      <tr>
+        <th>Fecha</th><th>Código</th><th>Tipo</th><th>Consumidor</th><th>Descripción</th><th>Pedido</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function load(){
+      const r = await fetch("/api/reclamos");
+      const j = await r.json();
+      const tb = document.querySelector("#t tbody");
+      tb.innerHTML = "";
+      (j.rows||[]).forEach(x=>{
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${x.fecha}</td>
+          <td><b>${x.codigo}</b></td>
+          <td>${x.tipo}</td>
+          <td class="wrap">${x.consumidor_nombres}\n${x.consumidor_email||""}\n${x.consumidor_telefono||""}</td>
+          <td class="wrap">${x.descripcion}</td>
+          <td class="wrap">${x.pedido}</td>
+        `;
+        tb.appendChild(tr);
+      });
+    }
+    load();
+  </script>
+</body>
+</html>

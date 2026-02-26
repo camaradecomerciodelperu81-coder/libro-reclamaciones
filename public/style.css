@@ -1,0 +1,144 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* FONDO PLOMO */
+body {
+  margin: 0;
+  background: #d9d9d9; /* plomo institucional */
+}
+
+/* CONTENEDOR TIPO HOJA */
+.hoja {
+  background: #ffffff;
+  width: 90%;
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 30px 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+/* LOGO IZQUIERDO (CÁMARA) */
+.logo-izq img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* LOGO DERECHO (LIBRO) */
+.logo-der img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* TÍTULO CENTRAL */
+.titulo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #b30000;
+  text-align: center;
+  flex: 1;
+}
+
+/* LÍNEA ROJA INSTITUCIONAL */
+.linea-roja {
+  height: 4px;
+  background: #b30000;
+  margin: 15px 0 25px 0;
+}
+
+/* ================= FORMULARIO ================= */
+
+.formulario {
+  padding: 10px 0;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #b30000;
+  outline: none;
+}
+
+/* BOTÓN INSTITUCIONAL */
+button {
+  background: #b30000;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #800000;
+}
+
+/* MENSAJES */
+.msg {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  display: none;
+}
+
+.msg.ok {
+  background: #e0ffe0;
+  border: 1px solid green;
+  display: block;
+}
+
+.msg.bad {
+  background: #ffe0e0;
+  border: 1px solid red;
+  display: block;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .titulo {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .logo-izq img,
+  .logo-der img {
+    height: 50px;
+  }
+
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Libro de Reclamaciones</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<div class="hoja">
+
+  <!-- ENCABEZADO INSTITUCIONAL -->
+  <div class="header">
+
+    <div class="logo-izq">
+      <img src="/logo-camara.png" alt="Cámara" />
+    </div>
+
+    <div class="titulo">
+      LIBRO DE RECLAMACIONES
+    </div>
+
+    <div class="logo-der">
+      <img src="/logo-libro.png" alt="Libro" />
+    </div>
+
+  </div>
+
+  <div class="linea-roja"></div>
+
+  <!-- FORMULARIO -->
+  <div class="formulario">
+
+    <form id="frm">
+
+      <label>Tipo *
+        <select name="tipo" required>
+          <option value="">Seleccione</option>
+          <option value="RECLAMO">RECLAMO</option>
+          <option value="QUEJA">QUEJA</option>
+        </select>
+      </label>
+
+      <label>Nombres y Apellidos *
+        <input name="consumidor_nombres" required />
+      </label>
+
+      <label>DNI/CE
+        <input name="consumidor_dni" />
+      </label>
+
+      <label>Email
+        <input name="consumidor_email" type="email" />
+      </label>
+
+      <label>Teléfono
+        <input name="consumidor_telefono" />
+      </label>
+
+      <label>Descripción *
+        <textarea name="descripcion" required rows="4"></textarea>
+      </label>
+
+      <label>Pedido del consumidor *
+        <textarea name="pedido" required rows="3"></textarea>
+      </label>
+
+      <button type="submit">Enviar Reclamo</button>
+
+      <div id="msg" class="msg"></div>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
